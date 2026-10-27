@@ -101,7 +101,7 @@
         }
 
         html[data-theme="light"] .editor-theme-overlay {
-            background-color: rgb(15 23 42 / 42%);
+            background-color: rgb(15 23 42 / 42%) !important;
         }
 
         html[data-theme="light"] .editor-theme-toggle {
@@ -264,6 +264,38 @@
         html[data-theme="light"] [class*="to-slate-950"],
         html[data-theme="light"] [class*="to-slate-900"] {
             --tw-gradient-to: var(--surface) var(--tw-gradient-to-position);
+        }
+
+
+        /* Keep white labels on saturated buttons/nodes where they retain AA contrast. */
+        html[data-theme="light"] [class~="bg-blue-600"][class*="text-white"],
+        html[data-theme="light"] [class~="bg-purple-600"][class*="text-white"],
+        html[data-theme="light"] [class~="bg-green-600"][class*="text-white"],
+        html[data-theme="light"] [class~="bg-red-600"][class*="text-white"],
+        html[data-theme="light"] [class~="bg-blue-700"][class*="text-white"],
+        html[data-theme="light"] [class~="bg-purple-700"][class*="text-white"],
+        html[data-theme="light"] [class~="bg-green-700"][class*="text-white"],
+        html[data-theme="light"] [class~="bg-red-700"][class*="text-white"],
+        html[data-theme="light"] [class~="bg-blue-600"] [class*="text-white"],
+        html[data-theme="light"] [class~="bg-purple-600"] [class*="text-white"],
+        html[data-theme="light"] [class~="bg-green-600"] [class*="text-white"],
+        html[data-theme="light"] [class~="bg-red-600"] [class*="text-white"],
+        html[data-theme="light"] [class~="bg-blue-700"] [class*="text-white"],
+        html[data-theme="light"] [class~="bg-purple-700"] [class*="text-white"],
+        html[data-theme="light"] [class~="bg-green-700"] [class*="text-white"],
+        html[data-theme="light"] [class~="bg-red-700"] [class*="text-white"] {
+            color: #ffffff;
+        }
+
+        /* Preserve the subscription card's blue-to-purple identity on a light canvas. */
+        html[data-theme="light"] [class*="from-blue-900"] {
+            --tw-gradient-from: #eff6ff var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(239 246 255 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+
+        html[data-theme="light"] [class*="to-purple-900"] {
+            --tw-gradient-to: #f3e8ff var(--tw-gradient-to-position);
         }
 
         /* Accent colors stay the same */
