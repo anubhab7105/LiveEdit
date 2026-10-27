@@ -112,12 +112,12 @@ export const SubscriptionPlans: React.FC<SubscriptionPlansProps> = ({
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
+    <div className="editor-theme-content max-w-6xl mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
           Choose Your Plan
         </h2>
-        <p className="text-gray-400 text-lg">
+        <p className="text-gray-600 text-lg">
           Unlock premium features and take your video editing to the next level
         </p>
       </div>
@@ -133,7 +133,7 @@ export const SubscriptionPlans: React.FC<SubscriptionPlansProps> = ({
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className={`relative rounded-2xl p-8 ${
+              className={`editor-theme-card relative rounded-2xl p-8 ${
                 isPremium
                   ? 'bg-gradient-to-br from-blue-900/50 to-purple-900/50 border-2 border-blue-500'
                   : 'bg-gray-800/50 border border-gray-700'
@@ -153,7 +153,7 @@ export const SubscriptionPlans: React.FC<SubscriptionPlansProps> = ({
                   <span className="text-4xl font-bold">
                     {formatPrice(plan.price, plan.currency)}
                   </span>
-                  <span className="text-gray-400 ml-2">/month</span>
+                  <span className="text-gray-600 ml-2">/month</span>
                 </div>
               </div>
 
@@ -173,7 +173,7 @@ export const SubscriptionPlans: React.FC<SubscriptionPlansProps> = ({
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    <span className="text-gray-300">{feature}</span>
+                    <span className="text-gray-700">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -196,7 +196,7 @@ export const SubscriptionPlans: React.FC<SubscriptionPlansProps> = ({
         })}
       </div>
 
-      <div className="mt-12 text-center text-gray-400 text-sm">
+      <div className="mt-12 text-center text-gray-600 text-sm">
         <p>All plans include 24/7 customer support and automatic updates</p>
         <p className="mt-2">Cancel anytime. No questions asked.</p>
       </div>
