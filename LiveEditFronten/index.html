@@ -267,23 +267,20 @@
         }
 
 
-        /* Keep white labels on saturated buttons/nodes where they retain AA contrast. */
-        html[data-theme="light"] [class~="bg-blue-600"][class*="text-white"],
-        html[data-theme="light"] [class~="bg-purple-600"][class*="text-white"],
-        html[data-theme="light"] [class~="bg-green-600"][class*="text-white"],
-        html[data-theme="light"] [class~="bg-red-600"][class*="text-white"],
-        html[data-theme="light"] [class~="bg-blue-700"][class*="text-white"],
-        html[data-theme="light"] [class~="bg-purple-700"][class*="text-white"],
-        html[data-theme="light"] [class~="bg-green-700"][class*="text-white"],
-        html[data-theme="light"] [class~="bg-red-700"][class*="text-white"],
-        html[data-theme="light"] [class~="bg-blue-600"] [class*="text-white"],
-        html[data-theme="light"] [class~="bg-purple-600"] [class*="text-white"],
-        html[data-theme="light"] [class~="bg-green-600"] [class*="text-white"],
-        html[data-theme="light"] [class~="bg-red-600"] [class*="text-white"],
-        html[data-theme="light"] [class~="bg-blue-700"] [class*="text-white"],
-        html[data-theme="light"] [class~="bg-purple-700"] [class*="text-white"],
-        html[data-theme="light"] [class~="bg-green-700"] [class*="text-white"],
-        html[data-theme="light"] [class~="bg-red-700"] [class*="text-white"] {
+        /* Saturated workflow-node labels need stronger contrast in light mode. */
+        html[data-theme="light"] .workflow-start-node {
+            background-color: #166534 !important;
+            border-color: #14532d;
+        }
+
+        html[data-theme="light"] .workflow-stop-node {
+            background-color: #991b1b !important;
+            border-color: #7f1d1d;
+        }
+
+        /* Preserve white text only on the darkened workflow node surfaces. */
+        html[data-theme="light"] .workflow-start-node,
+        html[data-theme="light"] .workflow-stop-node {
             color: #ffffff;
         }
 
