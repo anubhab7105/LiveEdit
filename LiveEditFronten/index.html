@@ -85,6 +85,31 @@
         .editor-border { border-color: var(--border); }
         .editor-input { background-color: var(--input); border-color: var(--border); }
 
+        .editor-theme-content { color: var(--text); }
+
+        html[data-theme="light"] .editor-theme-card {
+            background-color: var(--surface) !important;
+            color: var(--text-strong);
+            border-color: var(--border);
+        }
+
+        html[data-theme="light"] .editor-theme-modal {
+            background-color: var(--surface) !important;
+            color: var(--text-strong);
+            border-color: var(--border);
+            box-shadow: 0 24px 80px rgb(15 23 42 / 18%);
+        }
+
+        html[data-theme="light"] .editor-theme-overlay {
+            background-color: rgb(15 23 42 / 42%);
+        }
+
+        html[data-theme="light"] .editor-theme-toggle {
+            color: var(--muted-strong);
+            border-color: var(--border);
+        }
+
+
         /*
          * Light-theme compatibility layer.
          *
@@ -209,6 +234,36 @@
             --tw-gradient-to: rgb(245 245 245 / 0) var(--tw-gradient-to-position);
             --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to);
             --tw-gradient-via: var(--bg) var(--tw-gradient-via-position);
+        }
+
+        /* Translate dark gradient endpoints on older screens too. */
+        html[data-theme="light"] [class*="from-neutral-950"],
+        html[data-theme="light"] [class*="from-neutral-900"],
+        html[data-theme="light"] [class*="from-gray-950"],
+        html[data-theme="light"] [class*="from-gray-900"],
+        html[data-theme="light"] [class*="from-slate-950"],
+        html[data-theme="light"] [class*="from-slate-900"] {
+            --tw-gradient-from: var(--surface) var(--tw-gradient-from-position);
+            --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+        }
+
+        html[data-theme="light"] [class*="via-neutral-950"],
+        html[data-theme="light"] [class*="via-neutral-900"],
+        html[data-theme="light"] [class*="via-gray-950"],
+        html[data-theme="light"] [class*="via-gray-900"] {
+            --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-via), var(--tw-gradient-to);
+            --tw-gradient-via: var(--surface) var(--tw-gradient-via-position);
+        }
+
+        html[data-theme="light"] [class*="to-neutral-950"],
+        html[data-theme="light"] [class*="to-neutral-900"],
+        html[data-theme="light"] [class*="to-gray-950"],
+        html[data-theme="light"] [class*="to-gray-900"],
+        html[data-theme="light"] [class*="to-slate-950"],
+        html[data-theme="light"] [class*="to-slate-900"] {
+            --tw-gradient-to: var(--surface) var(--tw-gradient-to-position);
         }
 
         /* Accent colors stay the same */
